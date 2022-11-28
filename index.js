@@ -6,7 +6,19 @@ const typeDefs = gql `
     }
 `;
 
+const resolvers = {
+    Query: {
+        hello: () => {
+            return "world"
+        },
+    },
+};
 
-Server.listen().then(({ url }) => {
-    console.log("server vis up " + url)
+const server = new ApolloServer ({
+    typeDevs,
+    resolvers,
+})
+
+server.listen().then(({ url }) => {
+    console.log("server is up " + url)
 })
