@@ -6,6 +6,8 @@ const typeDefs = gql `
     type Query {
         hello: String
         numberOfAnimals: Int
+        price: Float
+        isForSale: Boolean
     }
 `;
 
@@ -16,7 +18,13 @@ const resolvers = {
         },
         numberOfAnimals: () => {
             return 24;
-        }
+        },
+        price: () => {
+            return 39.90;
+        },
+        isForSale: () => {
+            return true;
+        },
     },
 };
 
